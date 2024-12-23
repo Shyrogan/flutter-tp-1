@@ -3,7 +3,6 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:tp1/main.dart';
 import 'package:tp1/profile.dart';
 import 'package:transparent_image/transparent_image.dart';
 
