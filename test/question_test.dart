@@ -7,7 +7,9 @@ void main() {
   testWidgets('Checks whether profile displays required informations', (WidgetTester tester) async {
     // On construit notre profil pour le test 
     await tester.pumpWidget(MaterialApp(
-      home: Scaffold(body: questionsDataSet.first)
+      home: Scaffold(body: QuestionnaireWidget(questions: [
+        Question(questionText: 'Est-ce que Dart/Flutter est agréable à utiliser ?', isCorrect: true)
+      ]))
     ));
 
     // On vérifie qu'on arrive bien sur la page de profil

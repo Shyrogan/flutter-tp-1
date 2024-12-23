@@ -85,7 +85,7 @@ class ProfileWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
                 ElevatedButton.icon(
-                  onPressed: () => Navigator.of(context).pushNamed('/random'),
+                  onPressed: () => Navigator.of(context).pushNamed('/quizz'),
                   icon: const Icon(Icons.quiz_rounded),
                   label: const Text("Répondre à une question aléatoire"),
                   style: ElevatedButton.styleFrom(

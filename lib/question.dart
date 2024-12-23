@@ -1,32 +1,30 @@
 import 'package:flutter/material.dart';
 
-const questionsDataSet = [
-  QuestionWidget(question: "Est-ce que Dart/Flutter est agréable à utiliser ?", isRight: true),
-  QuestionWidget(question: "Le langage C est-il orienté objet ?", isRight: false),
-  QuestionWidget(question: "HTML est-il un langage de programmation ?", isRight: false),
-  QuestionWidget(question: "Le polymorphisme est-il un concept de la programmation orientée objet ?", isRight: true),
-  QuestionWidget(question: "Les bases de données NoSQL utilisent-elles des tables ?", isRight: false),
-  QuestionWidget(question: "Est-ce que JavaScript peut être exécuté côté serveur ?", isRight: true),
-  QuestionWidget(question: "Python utilise-t-il l'indentation pour structurer son code ?", isRight: true),
-  QuestionWidget(question: "TCP garantit-il la livraison des paquets ?", isRight: true),
-  QuestionWidget(question: "CSS signifie-t-il 'Cascading Style Sheets' ?", isRight: true),
-  QuestionWidget(question: "Le protocole HTTPS est-il plus sécurisé que HTTP ?", isRight: true),
-];
+class Question {
+  String questionText;
+  bool isCorrect;
 
-class QuestionWidget extends StatelessWidget {
-  const QuestionWidget({
-    super.key,
-    required this.question,
-    required this.isRight,
-    this.imageLink
+  Question({
+    required this.questionText,
+    required this.isCorrect
   });
+}
 
-  final String question;
-  final bool isRight;
-  final String? imageLink;
+class QuestionnaireState extends State<QuestionnaireWidget> {
+  late Question _currentQuestion;
 
-  void _next(BuildContext context) {
-    Navigator.of(context).pushNamed('/random');
+  QuestionnaireState();
+
+  @override
+  void initState() {
+    super.initState();
+    _currentQuestion = widget.questions.first;
+  }
+
+  void _next() {
+    setState(() {
+      _currentQuestion = widget.questions[(widget.questions.indexOf(_currentQuestion) + 1) % widget.questions.length];
+    });
   }
 
   @override
@@ -45,7 +43,7 @@ class QuestionWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  question,
+                  _currentQuestion.questionText,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -55,14 +53,14 @@ class QuestionWidget extends StatelessWidget {
                 ElevatedButton(
                   child: const Text("Vrai"),
                   onPressed: () => {
-                    if (isRight) _next(context)
+                    if (_currentQuestion.isCorrect) _next()
                   }
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   child: const Text("Faux"),
                   onPressed: () => {
-                    if (!isRight) _next(context)
+                    if (!_currentQuestion.isCorrect) _next()
                   }
                 )
               ],
@@ -72,4 +70,13 @@ class QuestionWidget extends StatelessWidget {
       )
     );
   }
+}
+
+class QuestionnaireWidget extends StatefulWidget {
+  final List<Question> questions;
+
+  const QuestionnaireWidget({ super.key, required this.questions });
+
+  @override
+  State<StatefulWidget> createState() => QuestionnaireState();
 }

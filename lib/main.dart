@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:tp1/profile.dart';
 import 'package:tp1/question.dart';
@@ -27,7 +25,50 @@ class Application extends StatelessWidget {
             bskyHandle: 'shyrogan.bsky.social',
             githubHandle: 'Shyrogan',
           ),
-        '/random': (context) => questionsDataSet[Random().nextInt(questionsDataSet.length)]
+        '/quizz': (context) => QuestionnaireWidget(
+          questions: [
+            Question(
+              questionText: "La Tour Eiffel mesure exactement 324 mètres de hauteur",
+              isCorrect: true
+            ),
+            Question(
+              questionText: "Le Soleil tourne autour de la Terre",
+              isCorrect: false
+            ),
+            Question(
+              questionText: "L'eau bout toujours à 100 degrés Celsius",
+              isCorrect: false
+            ),
+            Question(
+              questionText: "La Grande Muraille de Chine est visible depuis l'espace",
+              isCorrect: false
+            ),
+            Question(
+              questionText: "Le diamant est la forme la plus dure du carbone",
+              isCorrect: true
+            ),
+            Question(
+              questionText: "Mozart est mort avant ses 40 ans",
+              isCorrect: true
+            ),
+            Question(
+              questionText: "Les autruches mettent leur tête dans le sable quand elles ont peur",
+              isCorrect: false
+            ),
+            Question(
+              questionText: "Le corps humain contient plus de bactéries que de cellules",
+              isCorrect: true
+            ),
+            Question(
+              questionText: "Vincent van Gogh n'a vendu qu'un seul tableau de son vivant",
+              isCorrect: true
+            ),
+            Question(
+              questionText: "Les chauves-souris sont aveugles",
+              isCorrect: false
+            ),
+          ]
+        ) 
       },
     );
   }
