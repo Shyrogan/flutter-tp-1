@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class Question {
   String questionText;
@@ -42,13 +43,18 @@ class QuestionnaireState extends State<QuestionnaireWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: widget.imageUrl != null ? NetworkImage(widget.imageUrl!) : MemoryImage(kTransparentImage),
+                  backgroundColor: Colors.grey.shade200,
+                ),
+                const SizedBox(height: 8),
                 Text(
                   _currentQuestion.questionText,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 8),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   child: const Text("Vrai"),
@@ -73,9 +79,10 @@ class QuestionnaireState extends State<QuestionnaireWidget> {
 }
 
 class QuestionnaireWidget extends StatefulWidget {
+  final String? imageUrl;
   final List<Question> questions;
 
-  const QuestionnaireWidget({ super.key, required this.questions });
+  const QuestionnaireWidget({ super.key, required this.questions, this.imageUrl });
 
   @override
   State<StatefulWidget> createState() => QuestionnaireState();

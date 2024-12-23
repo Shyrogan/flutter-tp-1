@@ -25,50 +25,56 @@ class Application extends StatelessWidget {
             bskyHandle: 'shyrogan.bsky.social',
             githubHandle: 'Shyrogan',
           ),
-        '/quizz': (context) => QuestionnaireWidget(
+        '/quizz/astronomy': (context) => QuestionnaireWidget(
+          imageUrl: 'https://www.aquaportail.com/pictures2311/phones/systeme-solaire.jpg',
           questions: [
             Question(
-              questionText: "La Tour Eiffel mesure exactement 324 mètres de hauteur",
-              isCorrect: true
-            ),
-            Question(
-              questionText: "Le Soleil tourne autour de la Terre",
+              questionText: "Mercure est la planète la plus chaude du système solaire",
               isCorrect: false
             ),
             Question(
-              questionText: "L'eau bout toujours à 100 degrés Celsius",
-              isCorrect: false
-            ),
-            Question(
-              questionText: "La Grande Muraille de Chine est visible depuis l'espace",
-              isCorrect: false
-            ),
-            Question(
-              questionText: "Le diamant est la forme la plus dure du carbone",
+              questionText: "Une année sur Pluton équivaut à 248 années terrestres",
               isCorrect: true
             ),
             Question(
-              questionText: "Mozart est mort avant ses 40 ans",
+              questionText: "La Lune s'éloigne progressivement de la Terre chaque année",
               isCorrect: true
             ),
             Question(
-              questionText: "Les autruches mettent leur tête dans le sable quand elles ont peur",
+              questionText: "Saturne est la seule planète du système solaire à avoir des anneaux",
               isCorrect: false
             ),
             Question(
-              questionText: "Le corps humain contient plus de bactéries que de cellules",
+              questionText: "Le Soleil perdra sa luminosité dans environ 5 milliards d'années",
               isCorrect: true
-            ),
-            Question(
-              questionText: "Vincent van Gogh n'a vendu qu'un seul tableau de son vivant",
-              isCorrect: true
-            ),
-            Question(
-              questionText: "Les chauves-souris sont aveugles",
-              isCorrect: false
             ),
           ]
-        ) 
+        ),
+        '/quizz/cinema': (context) => QuestionnaireWidget(
+          imageUrl: 'https://cdn.concreteplayground.com/content/uploads/2020/07/EventCinemas-supplied-1440x1440.jpg',
+          questions: [
+            Question(
+              questionText: "Le film Titanic a remporté 11 Oscars en 1998",
+              isCorrect: true
+            ),
+            Question(
+              questionText: "Leonardo DiCaprio a gagné son premier Oscar pour son rôle dans Inception",
+              isCorrect: false
+            ),
+            Question(
+              questionText: "Le premier film Star Wars est sorti en 1977",
+              isCorrect: true
+            ),
+            Question(
+              questionText: "Le Seigneur des Anneaux a été tourné entièrement en studio",
+              isCorrect: false
+            ),
+            Question(
+              questionText: "Avatar est le film le plus rentable de tous les temps",
+              isCorrect: true
+            ),
+          ]
+        )
       },
     );
   }

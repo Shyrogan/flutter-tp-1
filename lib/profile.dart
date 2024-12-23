@@ -73,7 +73,7 @@ class ProfileWidget extends StatelessWidget {
                     foregroundColor: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 8),
                 ElevatedButton.icon(
                   onPressed: () => _launch("https://github.com/$githubHandle"),
                   icon: const Icon(Icons.gite),
@@ -85,14 +85,24 @@ class ProfileWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
                 ElevatedButton.icon(
-                  onPressed: () => Navigator.of(context).pushNamed('/quizz'),
-                  icon: const Icon(Icons.quiz_rounded),
-                  label: const Text("Répondre à une question aléatoire"),
+                  onPressed: () => Navigator.of(context).pushNamed('/quizz/astronomy'),
+                  icon: const Icon(Icons.circle),
+                  label: const Text("Questionnaire d'astronomie"),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.lime,
                     foregroundColor: Colors.white,
                   ),
                 ),
+                const SizedBox(height: 8),
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.of(context).pushNamed('/quizz/cinema'),
+                  icon: const Icon(Icons.circle),
+                  label: const Text("Questionnaire sur le cinéma"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    foregroundColor: Colors.white,
+                  ),
+                )
               ],
             ),
           ),
