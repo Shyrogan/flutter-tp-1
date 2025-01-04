@@ -1,16 +1,55 @@
-# tp1
+# Flutter Profile and QCM App
 
-A new Flutter project.
+Cette application Flutter démarre sur un **écran de profil** et permet aux utilisateurs d'accéder à un **QCM** depuis celui-ci.
 
-## Getting Started
+## 🛠️ Getting Started
 
-This project is a starting point for a Flutter application.
+### 📌 Prérequis
 
-A few resources to get you started if this is your first Flutter project:
+1. Installez **Flutter** en suivant les [instructions officielles](https://docs.flutter.dev/get-started/install).
+2. Assurez-vous d'avoir **un appareil physique** ou **un émulateur** configuré.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 📥 Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Clonez le projet depuis le dépôt GitHub :
+
+```bash
+git clone https://github.com/Shyrogan/flutter-tp-1
+cd flutter-tp-1
+```
+
+Installez les dépendances :
+
+```bash
+flutter pub get
+```
+
+### 🚀 Exécution du projet
+
+Lancez l'application sur un simulateur ou un appareil physique :
+
+```bash
+flutter run
+```
+
+Si plusieurs appareils sont connectés, sélectionnez-en un avec :
+
+```bash
+flutter devices
+flutter run -d <device_id>
+```
+
+### 🧪 Tests
+
+Exécutez les tests unitaires avec :
+
+```bash
+flutter test
+```
+
+---
+
+## 📱 Navigation
+
+- **Écran de profil** : L'application démarre sur cet écran.
+- **Accès au QCM** : Depuis le profil, l'utilisateur peut naviguer vers la section QCM pour répondre à des questions.
